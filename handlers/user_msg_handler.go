@@ -88,9 +88,10 @@ func (h *UserMessageHandler) ReplyText() error {
 		log.Println("user message is empty")
 		return nil
 	}
+	log.Printf("NickName[%v]", h.sender.NickName)
 
 	// 2.向GPT发起请求，如果回复文本等于空,不回复
-	reply, err = gpt.CompletionsApi(h.getRequestText())
+	reply, err = gpt.CompletionsApi(h.getRequestText(), h.sender.NickName)
 	if err != nil {
 		text := err.Error()
 		if strings.Contains(err.Error(), "context deadline exceeded") {
