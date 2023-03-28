@@ -93,7 +93,7 @@ func CompletionsApi(msg string, name string) (string, error) {
 			Messages: []openai.ChatCompletionMessage{
 				{
 					Role:    openai.ChatMessageRoleSystem,
-					Content: "你是一个智能机器人，正在为多余用户服务，可以从对话记录的name字段了解到和你对话的用户的名字。",
+					Content: "你是一个智能机器人，正在为多余用户服务，可以从对话记录的name字段了解到和你对话的用户的名字。如果name为空可以理解为不同的用户",
 				},
 				{
 					Role:    openai.ChatMessageRoleUser,
