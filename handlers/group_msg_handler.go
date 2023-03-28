@@ -184,7 +184,7 @@ func (g *GroupMessageHandler) buildReplyText(reply string) string {
 	// 2.拼接回复, @我的用户, 问题, 回复
 	replaceText := "@" + g.self.NickName
 	question := strings.TrimSpace(strings.ReplaceAll(g.msg.Content, replaceText, ""))
-	hr := strings.Repeat("-", 30)
+	hr := strings.Repeat("-", 15)
 	reply = atText + "\n" + question + "\n" + hr + "\n" + reply
 	reply = strings.Trim(reply, "\n")
 
